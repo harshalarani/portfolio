@@ -1,0 +1,27 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+.navbar {
+    position: fixed; /* Sticky positioning */
+    top: 50%; /* Center vertically */
+    left: 3%;
+    transform: translateY(-50%);
+    /* Background color */
+    padding: 10px;
+    border-radius: 0 5px 5px 0; /* Rounded corners on the right side */
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.navbar li {
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.navbar li:hover {
+  font-size: 35px;
+  color: aqua; /* Hover effect */
+}

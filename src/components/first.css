@@ -1,0 +1,141 @@
+/* first.css */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+
+html,
+body {
+height: 100%;
+}
+
+body {
+ font-family: Pangolin;
+  background-color: rgb(10, 9, 9);
+  display: flex;
+
+  
+  color: rgb(244, 237, 231); /* Setting default text color */
+}
+
+.container {
+    bottom: 80px;
+  width: 380px;
+  height: 220px;
+  position: relative;
+}
+
+.title {
+    top:55%;
+  font-size: 55px;
+  text-transform: uppercase;
+  position: relative;
+  justify-content: center;
+  left: 140%;
+}
+
+.title span {
+  width: 80%;
+  float: left;
+  display: block;
+  transform: translateY(-80px);
+  opacity: 0;
+  animation: titleAnimation 2s ease forwards;
+}
+
+.title span:nth-child(1) {
+  animation-delay: 0.6s;
+}
+
+.title span:nth-child(2) {
+  animation-delay: 0.8s;
+  color: aqua;
+}
+
+.title span:nth-child(3) {
+  animation-delay: 0.9s;
+  color: rgb(236, 241, 241);
+}
+
+.about h1{
+ display:inline-block;
+ width: 650px;
+ height: auto;
+ position: absolute;
+ font-size: 30px;
+ top: 390%;
+left:189%;
+color: aqua;
+}
+#about{
+  padding-top: 8%;;
+}
+
+.atext{
+  margin-top: 0%;;
+  position:absolute;
+    width: 650px;
+display: inline-block;
+    font-size: 27px;
+    top: 340%;
+   color: rgb(228, 239, 239);
+   opacity: 0; /* Start with opacity 0 */
+   left: 119%;
+  
+
+}
+.hatext{
+  color: aqua;
+}
+
+.me{
+  position:absolute;
+top:35%;
+  left:190%;
+  width: 450px;
+  animation: meAnimation 3s ease forwards;
+ 
+}
+.sfirst{
+  position: absolute;
+  top:700%;
+  left:143%;
+  opacity: 0;
+  width:400px;
+ 
+}
+/* CSS for animating elements into view */
+.animate {
+  opacity: 1; /* Change opacity to 1 */
+  transform: translateY(0); /* Reset any Y-axis transformation */
+  transition: opacity 4s ease, transform 4s ease; /* Apply a smooth transition for both properties */
+}
+
+@keyframes titleAnimation {
+    0% {
+      transform: translateY(-80px);
+      opacity: 0;
+    }
+    20% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(50px);
+      opacity: 1;
+    }
+  }
+  @keyframes meAnimation {
+    0% {
+      transform: translateY(-80px);
+      opacity: 0;
+    }
+    20% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(50px);
+      opacity: 1;
+    }
+  }
+  

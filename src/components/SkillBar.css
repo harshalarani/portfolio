@@ -1,0 +1,27 @@
+.skillbar-container {
+  margin: 20px 0;
+}
+
+.skillbar-title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.skillbar {
+  background-color: #ddd;
+  height: 27px;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+.skillbar-filled {
+  background-color: #5cb85c; /* Change color as needed */
+  height: 100%;
+  border-radius: 8px;
+  transition: width 1s ease-in-out;
+}
