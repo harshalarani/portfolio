@@ -25,3 +25,34 @@
   font-size: 35px;
   color: aqua; /* Hover effect */
 }
+@media only screen and (max-width: 768px) { /* Adjust this breakpoint as needed */
+    .navbar {
+      position: fixed;
+      top: 0; /* Align to the top */
+      left: 0; /* Align to the left */
+      transform: translateY(0); /* Remove vertical transform */
+      width: 100%; /* Full width */
+      height: auto; /* Auto height to wrap all items */
+      padding: 10px 0; /* Adjust padding to only top and bottom */
+      border-radius: 0; /* Reset border radius */
+      text-align: center; /* Center the items if you have space */
+    }
+  
+    .navbar ul {
+      display: flex; /* Use flexbox for horizontal alignment */
+      justify-content: center; /* Center items horizontally */
+      flex-wrap: wrap; /* Wrap items to next line if not enough space */
+    }
+  
+    .navbar li {
+      padding: 8px; /* Adjust padding to reduce spacing between items */
+      font-size: 20px; /* Adjust font size for smaller screens */
+      flex: 1; /* Make items flexible */
+      text-align: center; /* Align text for each item */
+    }
+  
+    .navbar li:hover {
+      font-size: 20px; /* Keep the font size consistent on hover */
+      color: aqua;
+    }
+  }
