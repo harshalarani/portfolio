@@ -2,20 +2,20 @@ import React, { useEffect } from 'react';
 import './first.css';
 import me from './me.png'
 import SkillBar from './SkillBar';
+import SkillCircle from './SkillCircle';
 
 
 function First() {
   useEffect(() => {
     const handleScroll = () => {
-      // Select multiple elements individually
-      const textElements = document.querySelectorAll('.atext, .sfirst');
+      const textElements = document.querySelectorAll('.atext, .sfirst, .lskills');
   
       textElements.forEach((el) => {
         const textPosition = el.getBoundingClientRect().top;
-        const screenPosition = window.innerHeight / 1.3; // Adjust this value to change when the animation triggers
+        const screenPosition = window.innerHeight / 1.3;
   
         if (textPosition < screenPosition) {
-          el.classList.add('animate'); // Add 'animate' to each element when it meets the condition
+          el.classList.add('animate');
         }
       });
     };
@@ -33,14 +33,14 @@ function First() {
    
     <div className="container">
       <h1 className="title">
-        <span>Hi, nice</span>
-        <span>to see</span>
-        <span>you here</span>
+        <span>Hello!,</span>
+        <span>I am </span>
+        <span>Harshala Rani</span>
       </h1>
 
       <h2 className="title">
-        <span>I am</span>
-        <span>Harshala Rani.</span>
+        <span></span>
+        <span>Data Analyst</span>
       </h2>
       <img src={me} alt="me" className="me" />
 
@@ -71,7 +71,12 @@ function First() {
             <SkillBar skill="Excel" percentage={90} />
             </section>
         </div>
+        <div className='lskills'>
+      <SkillCircle skill="Kannada"  percentage={95}/>
+      <SkillCircle skill="English"  percentage={95}  />
+      <SkillCircle skill="Hindi" percentage={85}  />
     
+    </div>
     
     </div>
   );

@@ -3,9 +3,31 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
 
-html,
+html, body {
+  height: 100%;
+  margin: 0; /* Reset default margin */
+  padding: 0; /* Reset default padding */
+  position: relative; /* Needed for the pseudo-element to position absolutely */
+}
+
+body::before {
+  content: ''; /* Required property for pseudo-elements */
+  position: absolute; /* Position absolutely within the body */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('./bg.jpg') no-repeat center center fixed; /* The path to your image */
+  background-size: cover;
+  opacity: 0.1; /* Adjust the opacity as needed */
+  z-index: -1;
+   /* Place it behind the content of the body */
+}
+
+/* Add this if you want content in the body to be on top of the background image */
 body {
-height: 100%;
+  position: relative; /* Ensure that the stacking context is correct */
+  z-index: 1;
 }
 
 body {
@@ -98,10 +120,16 @@ top:35%;
 .sfirst{
   position: absolute;
   top:700%;
-  left:143%;
+  left:103%;
   opacity: 0;
-  width:400px;
- 
+  width:400px; 
+}
+.lskills{
+  position: absolute;
+  top:750%;
+  left:280%;
+  opacity: 0;
+  
 }
 /* CSS for animating elements into view */
 .animate {
@@ -138,4 +166,31 @@ top:35%;
       opacity: 1;
     }
   }
+  
+  @media screen and (max-width: 768px) {
+    .title {
+      font-size: 30px; /* Smaller font size */
+      left: 60%; /* Center relative to the parent */
+      transform: translateX(-50%); /* Center the element */
+    }
+  
+    .title span {
+      width: 100%; /* Full width */
+      float: none; /* Remove float */
+      display: inline-block; /* Use inline-block for better control */
+      transform: translateY(0); /* Start from a neutral position */
+    }
+    .me{
+      left:55%;
+    }
+   
+    body::before {
+      /* Cover might still be okay for tablets, adjust if necessary */
+      background-size: cover;
+      background-position: center center;
+      background-image: url('./bg.jpg') no-repeat center center fixed;
+    }
+  }
+  
+    /* Adjust other elements as needed */
   
