@@ -212,6 +212,7 @@ top:35%;
       top:1600%;
       left:27%;
       width:100%;
+      opacity: 1;
     }
    
     body::before {
