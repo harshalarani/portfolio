@@ -12,7 +12,8 @@ html, body {
 
 body::before {
   content: ''; /* Required property for pseudo-elements */
-  position: absolute; /* Position absolutely within the body */
+  position: absolute;
+  background-attachment: fixed;  /* Position absolutely within the body */
   top: 0;
   left: 0;
   right: 0;
@@ -119,7 +120,7 @@ top:35%;
 }
 .sfirst{
   position: absolute;
-  top:700%;
+  top:690%;
   left:103%;
   opacity: 0;
   width:400px; 
@@ -167,28 +168,67 @@ top:35%;
     }
   }
   
-  @media screen and (max-width: 768px) {
+  @media (max-width: 768px) {
+    *, *::before, *::after {
+      animation: none !important;
+      transition: none !important;
+    }
+    
+  
     .title {
-      font-size: 30px; /* Smaller font size */
-      left: 60%; /* Center relative to the parent */
-      transform: translateX(-50%); /* Center the element */
+      font-size: 85px; /* Smaller font size */
+      left: 16%; 
+      top: 160%;
+      align-items: center;
+      /* Center relative to the parent */
+      /* Center the element */
     }
   
     .title span {
-      width: 100%; /* Full width */
+      width: 70%;
+      height:100%; /* Full width */
       float: none; /* Remove float */
-      display: inline-block; /* Use inline-block for better control */
-      transform: translateY(0); /* Start from a neutral position */
+      display: block;
+      opacity: 1; /* Use inline-block for better control */
+     /* Start from a neutral position */
     }
     .me{
-      left:55%;
+      left:35%;
+      top:270%;
+      z-index: -1;
+    }
+     .atext {
+      left: 29%;
+      width:100%; /* Center horizontally */
+      
+      opacity: 1;
+      top:610%; /* Adjust horizontal centering */
+    }
+    .sfirst{
+      top:1300%;
+      left:24%;
+    }
+    .lskills{
+      top:1600%;
+      left:27%;
+      width:100%;
     }
    
     body::before {
-      /* Cover might still be okay for tablets, adjust if necessary */
+      /* Apply background with reduced opacity */
+      position: fixed;
+      
+      background: url('./bg.jpg') no-repeat center center fixed;
       background-size: cover;
-      background-position: center center;
-      background-image: url('./bg.jpg') no-repeat center center fixed;
+      opacity: 0.2; /* Adjust the opacity as needed for the background image */
+      z-index: -1; /* Keep it behind the content */
+    }
+  
+    /* Remove any direct background styles from the body element to avoid conflicts */
+    body {
+      background: none;
+      opacity: 1;
+      background-color: black;
     }
   }
   

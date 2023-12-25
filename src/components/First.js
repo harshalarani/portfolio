@@ -3,6 +3,7 @@ import './first.css';
 import me from './me.png'
 import SkillBar from './SkillBar';
 import SkillCircle from './SkillCircle';
+import Button from './DownloadButton';
 
 
 function First() {
@@ -18,6 +19,13 @@ function First() {
           el.classList.add('animate');
         }
       });
+
+      // Parallax effect for background
+      const scrollPosition = window.pageYOffset;
+      const parallaxBackground = document.querySelector('body::before');
+      if (parallaxBackground) {
+        parallaxBackground.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
+      }
     };
   
     window.addEventListener('scroll', handleScroll);
@@ -26,7 +34,6 @@ function First() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-  
   
 
   return (
@@ -37,11 +44,10 @@ function First() {
         <span>I am </span>
         <span>Harshala Rani</span>
       </h1>
-
-      <h2 className="title">
+      <h1 className="title">
         <span></span>
         <span>Data Analyst</span>
-      </h2>
+      </h1>
       <img src={me} alt="me" className="me" />
 
       
@@ -55,7 +61,7 @@ function First() {
 <p>Pressure? Bring it on! I'm the <span className='hatext'>ultimate multitasker</span>—juggling <span className='hatext'>leadership at 'U and I', freelancing as a tutor</span>, and running my buzzing blog. Academics? Nailed it. And in between, I fuel my brain with <span className='hatext'>books</span> and keep my <span className='hatext'>fitness</span> game strong.</p> 
 
 <p>I’m not your average coder—I’m a strategy maestro, a multitasking guru, and a growth junkie—both in my code and in life.</p>
-
+<Button/>
 </section>    
 </div>
 
