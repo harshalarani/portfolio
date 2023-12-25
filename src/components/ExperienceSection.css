@@ -1,0 +1,41 @@
+.experience-section {
+  position: relative;
+  margin-bottom: 40px;
+  padding-left: 30px;
+/* To ensure space for the marker and line */
+}
+
+.experience-section::after {
+  content: '';
+  position: absolute;
+  left: 15px; /* Center of the marker */
+  top: 10px; /* The vertical starting point of the line */
+  bottom: -20px; /* Adjust based on the bottom margin of the section */
+  border-left: 2px solid white; /* This creates the vertical line */
+  z-index: -1; /* Make sure the line is behind content */
+}
+
+.marker {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  left: 10px; /* Align to the center of the left padding */
+  top: 0; /* Align to the top of the section */
+  z-index: 1; /* Ensure the marker is above the line */
+}
+
+.content {
+  margin-left: 30px;
+  width: 200%; /* Adjusted to align with the updated marker position */
+}
+
+/* Since the last item does not need a line going down from it, you might want to add a separate class to remove the line */
+.experience-section.last::after {
+  display: none;
+}
+
+.content h2{
+  color: aqua;
+}

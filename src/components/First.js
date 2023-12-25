@@ -4,12 +4,13 @@ import me from './me.png'
 import SkillBar from './SkillBar';
 import SkillCircle from './SkillCircle';
 import Button from './DownloadButton';
+import ExperienceSection from './ExperienceSection'
 
 
 function First() {
   useEffect(() => {
     const handleScroll = () => {
-      const textElements = document.querySelectorAll('.atext, .sfirst, .lskills');
+      const textElements = document.querySelectorAll('.atext, .sfirst, .lskills,.expe');
   
       textElements.forEach((el) => {
         const textPosition = el.getBoundingClientRect().top;
@@ -34,6 +35,44 @@ function First() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+  const experiences = [
+    {
+      title: "No Offense,But -Blog",
+      jobTitle: "Co-Founder",
+    },
+    {
+      title: "U and I Organization",
+     
+      jobTitle: "Team Leader",
+      
+    },
+    {
+      title: "IEEE Computer Society",
+
+      jobTitle: "Student Activity Coordinator-",
+
+    },
+    {
+      title: "Sitara NGO",
+
+      jobTitle: "Interned as Teacher Instruction Curator",
+
+    },
+    {
+      title: "BMSCE Alumni Network",
+
+      jobTitle: "Social Media Team",
+
+    },
+    {
+      title: "Teachers By Choice",
+
+      jobTitle: "Freelance Teacher",
+
+    },
+    // ... other experience objects
+  ];
+
   
 
   return (
@@ -83,7 +122,15 @@ function First() {
       <SkillCircle skill="Hindi" percentage={85}  />
     
     </div>
-    
+   
+    <div className='expe'>
+    <section id="experience" className="section">
+      {experiences.map((exp, index) => (
+        <ExperienceSection key={index} {...exp} />
+      ))}
+         </section>
+    </div>
+ 
     </div>
   );
 }

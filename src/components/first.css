@@ -33,7 +33,7 @@ body {
 
 body {
  font-family: Pangolin;
-  background-color: rgb(10, 9, 9);
+  background-color: rgb(6, 6, 6);
   display: flex;
 
   
@@ -132,6 +132,12 @@ top:35%;
   opacity: 0;
   
 }
+.expe{
+  position: absolute;
+  top:1100%;
+  left:170%;
+  opacity: 0;
+}
 /* CSS for animating elements into view */
 .animate {
   opacity: 1; /* Change opacity to 1 */
@@ -212,6 +218,11 @@ top:35%;
       top:1600%;
       left:27%;
       width:100%;
+      opacity: 1;
+    }
+    .expe{
+      top:1800%;
+      left:29%;
       opacity: 1;
     }
    
